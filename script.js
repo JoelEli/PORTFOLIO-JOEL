@@ -1,3 +1,23 @@
+// ─── Mobile hamburger menu ──────────────────────────────────────
+const navToggle = document.querySelector('.nav-toggle');
+const navLinksEl = document.querySelector('.nav-links');
+
+if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.classList.toggle('open');
+        navLinksEl.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    navLinksEl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('open');
+            navLinksEl.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
 // ─── Smooth scroll ───────────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
