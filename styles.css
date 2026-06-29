@@ -947,8 +947,7 @@ a.contact-badge:hover {
     }
 
     .hero-name {
-        font-size: clamp(2.8rem, 12vw, 4.5rem);
-        word-break: break-word;
+        font-size: clamp(2.2rem, 10vw, 4.5rem);
     }
 
     .hero-desc {
